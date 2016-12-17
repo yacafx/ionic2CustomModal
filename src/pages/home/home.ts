@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
-
-import { NavController } from 'ionic-angular';
+import { ModalController, NavController } from 'ionic-angular';
+import { ModalPage } from '../modal/modal';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+	selector: 'page-home',
+	templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-    
-  }
+	constructor(public modalCtrl: ModalController) {
+	}
+
+	presentModal() {
+		let modal = this.modalCtrl.create(ModalPage);
+		modal.present();
+	}
 
 }
